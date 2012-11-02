@@ -1,10 +1,10 @@
-# Django settings for labgeeksrpg project.
+# Django settings for labgeeks project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-# The full path to your labgeeksrpg installation.
-APP_DIR = "/var/django/labgeeksrpg"
+# The full path to your labgeeks installation.
+APP_DIR = "/var/django/labgeeks"
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -123,7 +123,7 @@ INTERNAL_IPS = (
     '127.0.0.1',
 )
 
-ROOT_URLCONF = 'labgeeksrpg.urls'
+ROOT_URLCONF = 'labgeeks.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -143,21 +143,21 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'haystack',
-    'labgeeksrpg.chronos',
-    'labgeeksrpg.people',
-    'labgeeksrpg.pythia',
-    'labgeeksrpg.labgeeksrpg_config',
-    'labgeeksrpg.schedule',
-    'labgeeksrpg.delphi',
-    'labgeeksrpg.sybil',
+    'labgeeks_chronos',
+    'labgeeks_people',
+    'labgeeks_pythia',
+    'labgeeks_config',
+    'labgeeks_schedule',
+    'labgeeks_delphi',
+    'labgeeks_sybil',
     'south',
     'django.contrib.markup',
     #'debug_toolbar',
 )
 
-HAYSTACK_SITECONF = 'labgeeksrpg.search_sites'
+HAYSTACK_SITECONF = 'labgeeks.search_sites'
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
-HAYSTACK_WHOOSH_PATH = 'labgeeksrpg/whoosh_index'
+HAYSTACK_WHOOSH_PATH = 'labgeeks/whoosh_index'
 HAYSTACK_INCLUDE_SPELLING = True
 
 LOGIN_URL = '/login/'

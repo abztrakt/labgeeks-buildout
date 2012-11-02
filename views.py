@@ -2,10 +2,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response, HttpResponseRedirect
 from django.template import RequestContext
-from labgeeksrpg.forms import LoginForm
+from labgeeks.forms import LoginForm
 import datetime
-from labgeeksrpg.labgeeksrpg_config.models import Notification
-from labgeeksrpg.labgeeksrpg_config.forms import NotificationForm
+from labgeeks_config.models import Notification
+from labgeeks_config.forms import NotificationForm
 
 
 def hello(request):
