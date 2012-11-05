@@ -5,21 +5,24 @@
     margin-top: 2em;
     width: 100%;
     > div {
-        min-width: 60em;
+        min-width: 81em;
     }
     position: relative;
     margin-top: -@footerHeight;
     height: @footerHeight;
     clear: both;
+    text-align: justify;
 
-
-    dl {
+    dl, ul {
         font-size: 10pt;
-        margin: auto;
         overflow: hidden;
+        float:left;
+        position: relative;
+        left:3em;
     }
     dd {
         float: left;
+        margin-left: auto;
     }
     dt {
         float: left;
@@ -30,19 +33,10 @@
         font-size: 10px;
         padding-left: 4em;
     }
-    div div {
-        width: 21%;
+    .footer_column_outer {
         margin-top: 1em;
+        width: 24.7%;
+        display: inline-block;
         min-width: 20em;
-        float: right;
-    }
-    div:first-child {
-        float: left;
-        padding-left: 1em;
-    }
-    div:last-child {
-        margin-left: auto;
-        margin-right: auto;
-        float: none;
     }
 }
