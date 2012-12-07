@@ -4,8 +4,8 @@ from django.shortcuts import render_to_response, HttpResponseRedirect
 from django.template import RequestContext
 from labgeeks.forms import LoginForm
 import datetime
-from labgeeks_config.models import Notification
-from labgeeks_config.forms import NotificationForm
+from labgeeks_hermes.models import Notification
+from labgeeks_hermes.forms import NotificationForm
 
 
 def hello(request):
