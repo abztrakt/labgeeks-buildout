@@ -1,3 +1,7 @@
+/* This set of queries is used to migrate a labgeeksrpg site from the old structure to our new
+structure introduced with making it ready for django 1.4 */
+
+
 USE labgeeks;
 ALTER TABLE chronos_location RENAME TO labgeeks_chronos_location;
 ALTER TABLE chronos_location_active_users RENAME TO labgeeks_chronos_location_active_users;
