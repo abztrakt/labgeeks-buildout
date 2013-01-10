@@ -1,19 +1,9 @@
-# No worky
-#from south.signals import post_migrate
-#
-#
-#def update_permissions_after_migration(app, **kwargs):
-#    """
-#    Update app permission just after every migration.
-#    This is based on app django_extensions update_permissions management command.
-#    """
-#    try:
-#        import settings
-#        from django.db.models import get_app, get_models
-#        from django.contrib.auth.management import create_permissions
-#
-#        create_permissions(get_app(app), get_models(), 2 if settings.DEBUG else 0)
-#    except ImportError:
-#        pass
-#
-#post_migrate.connect(update_permissions_after_migration)
+from south.signals import post_migrate
+
+
+def update_permissions(**kwargs):
+    import sys
+    sys.stdout.write("If there are new content types or permissions added, remember to run-> labgeeks update_permissions\n\n")
+
+
+post_migrate.connect(update_permissions)
