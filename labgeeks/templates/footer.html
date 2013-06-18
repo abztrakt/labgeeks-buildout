@@ -1,46 +1,36 @@
-<div id="footer"><div {% if not request.user.is_authenticated %} style='min-width:60.4em;' {% endif %}>
-    <div class='footer_column_outer' {% if not request.user.is_authenticated %} style='width:33%;' {% endif %}>
-        <h2>//Contact Numbers</h2>
-        <dl>
-            <dt>Help desk:</dt>
-            <dd>555-555-5555</dd>
-
-            <dt>Catalyst:</dt>
-            <dd>555-555-5555</dd>
-
-            <dt>Manager:</dt>
-            <dd>555-555-5555</dd>
-        </dl>
+<div id="footer">
+    <div class="container">
+        <div class='row'>
+            <div class='footer_column_outer span2'>
+                <h2>//Contact Numbers</h2>
+                <dl>
+                    <dt>IT Support:</dt>
+                    <dd>123-456-7890</dd>
+                </dl>
+            </div>
+            <div class='footer_column_outer span2'>
+                <h2>//Quick Links</h2>
+                <ul>
+                    <li><a href="#">Link1</a></li>
+                    <li><a href="#">Link2</a></li>
+                    <li><a href="#">Link3</a></li>
+                </ul>
+            </div>
+            <div class='footer_column_outer span2'>
+                <h2>//Email Info</h2>
+                <dl>
+                    <dt>IT Support</dt>
+                    <dd><a href="#">it@email.com</a></dd>
+                </dl>
+            </div>
+            <div class='footer_column_outer span2'>
+                <h2>//Customize</h2>
+                <p>If you want to customize your own footer, add a line in TEMPLATE_DIRS in local_settings.py 
+                that points to where you want your server to look for the template. For example, I put
+                another footer.html in a new folder I created in templates/ called internal/. Therefore, I will
+                add the line "path/to/directory/.../templates/internal" in TEMPLATE_DIRS before the other paths
+                so that this footer.html will come first.</p>
+            </div>
+        </div>
     </div>
-    <div class='footer_column_outer' {% if not request.user.is_authenticated %} style='width:33%;' {% endif %}>
-        <h2>//Quick Links</h2>
-        <ul>
-            <li><a hef="http://lib.washington.edu/" target="_blank">link to library</a></li>
-            <li><a href="#">www.other.link.edu</a></li>
-            <li><a href="#">www.other.link.edu</a></li>
-        </ul>
-    </div>
-    {% if request.user.is_authenticated %}
-    <div class='footer_column_outer'>
-        <h2>//Feedback</h2>
-        <ul>
-            <li><a href='http://jira.cac.washington.edu/secure/CreateIssueDetails!init.jspa?pid=10243&components=10563&issuetype=1'>Report a Bug</a></li>
-            <li><a href='http://jira.cac.washington.edu/secure/CreateIssueDetails!init.jspa?pid=10243&components=10563&issuetype=2'>Request a Feature</a></li>
-            <li><a href='http://jira.cac.washington.edu/secure/CreateIssueDetails!init.jspa?pid=10243&components=10563&issuetype=4'>Suggest Improvement</a></li>
-        </ul>
-    </div>
-    {% endif %}
-    <div class='footer_column_outer' {% if not request.user.is_authenticated %} style='width:33%;' {% endif %}>
-        <h2>//Email Info</h2>
-        <dl>
-            <dt>Info Name:</dt>
-            <dd><a href="#">name@uw.edu</a></dd>
-
-            <dt>Info Name:</dt>
-            <dd><a href="#">name@uw.edu</a></dd>
-
-            <dt>Info Name:</dt>
-            <dd><a href="#">name@uw.edu</a></dd>
-        </dl>
-    </div>
-</div></div>
+</div>
