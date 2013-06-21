@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     #'labgeeks_sybil',
     #'labgeeks_delphi',
     #'labgeeks_pythia',
+    'uw_gws',
     'south',
     'django.contrib.markup',
     #'debug_toolbar',
