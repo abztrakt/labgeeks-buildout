@@ -142,7 +142,7 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'haystack',
+    #'haystack',
     'labgeeks_chronos',
     'labgeeks_hermes',
     'labgeeks_horae',
@@ -152,7 +152,7 @@ INSTALLED_APPS = (
     #'labgeeks_pythia',
     'uw_gws',
     'south',
-    'django.contrib.markup',
+    #'django.contrib.markup',
     #'debug_toolbar',
 )
 
