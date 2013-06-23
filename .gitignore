@@ -19,3 +19,4 @@ local
 local_settings.py
 src
 uploads
+template_overrides/*
