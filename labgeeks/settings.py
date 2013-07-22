@@ -143,6 +143,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #'haystack',
+    'badger',
     'labgeeks_chronos',
     'labgeeks_hermes',
     'labgeeks_horae',
