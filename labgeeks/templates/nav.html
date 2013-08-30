@@ -23,16 +23,29 @@
         </div>
     </div>
     {% if request.user.is_authenticated %}
-    <div class="nav">
-        <ul>
-            <li class="{% active_tab request "/" %}"> <a href="/">Home</a></li>
-            <li class="{% active_tab request "/chronos" %}"><a href="/chronos">Chronos</a></li>
+    <div class="nav row">
+        <ul class="span12">
+            <li class="head {% active_tab request "/" %}"> <a href="/">Home</a></li>
+            <li class="head {% active_tab request "/chronos" %}"><a href="/chronos">Chronos</a></li>
             {% if request.user.is_staff %}
-                <li class="{% active_tab request "/schedule" %}"><a href="/schedule">Schedule</a></li>
-            <li class="{% active_tab request "/chronos/report" %}"><a href="/chronos/report">Reports</a>{% endif %}
-            <li class="{% active_tab request "/people" %}"><a href="/people">People</a></li>
+                <li class="head {% active_tab request "/schedule" %}"><a href="/schedule">Schedule</a></li>
+            <li class="head {% active_tab request "/chronos/report" %}"><a href="/chronos/report">Reports</a>{% endif %}
+            <li class="head {% active_tab request "/people" %}"><a href="/people">People</a></li>
             <!--<li class="{% active_tab request "/oracles" %}"><a href="/oracles">Consult the Oracles</a></li>-->
             <!--<li><a class="bug_sug" href="http://trac.eplt.washington.edu/labgeeks4/newticket">Bugs + Feedback</a></li>-->
+            {% if perms.badger.view_badge %}
+                <li class="head dropdown {% active_tab request "/badger" %}">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" >Badger<b class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dlabel">
+                        <li class="drop"><a tabindex="-1" href="/badger">Badges list</a></li>
+                        <li class="drop"><a  tabindex="-1" href="/badger/create">Create</a></li>
+                        <li class="drop"><a tabindex="-1" href="/badger/awards">Awards Feed</a></li>
+                        <li class="drop"><a tabindex="-1" href="/badger/users/{{ request.user }}/awards">Your Awards</a></li>
+                        <li class="drop"><a tabindex="-1" href="/badger/users/{{ request.user }}/badges">Your Badges</a></li>
+                        <li class="drop"><a tabindex="-1" href="/badger/users/{{ request.user }}/nominations">Your Nominations</a></li>
+                   </ul>
+                </li>
+            {% endif %}
         </ul>
         <form id='search' action='/oracles/search/' method='get' style='float:right'>
             <input type='text' name='q' />
