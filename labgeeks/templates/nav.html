@@ -25,7 +25,7 @@
     {% if request.user.is_authenticated %}
     <div class="nav row">
         <ul class="span12">
-            <li class="head {% active_tab request "/chronos" %}"><a href="/chronos">Chronos</a></li>
+            <li class="head {% active_tab request "/chronos" %}"><a href="/chronos">Punchclock</a></li>
             {% if request.user.is_staff %}
                 <li class="head {% active_tab request "/schedule" %}"><a href="/schedule">Schedule</a></li>
             <li class="head {% active_tab request "/chronos/report" %}"><a href="/chronos/report">Reports</a>{% endif %}
