@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+from django.views.generic.simple import redirect_to
 import os
 import settings
 
@@ -18,7 +19,7 @@ urlpatterns = patterns('',
                        (r'^schedule/', include('labgeeks_horae.urls')),
                        (r'^delphi/', include('labgeeks_delphi.urls')),
                        (r'^pythia/', include('labgeeks_pythia.urls')),
-                       (r'^$', 'labgeeks.views.hello'),
+                       (r'^$', redirect_to, {'url': 'chronos/'}),
                        (r'^oracles/', include('labgeeks_sybil.urls')),
                        (r'^badger/', include('badger.urls')),
                        # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
