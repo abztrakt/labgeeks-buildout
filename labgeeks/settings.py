@@ -26,6 +26,9 @@ DATABASES = {
 # User Profiles
 AUTH_PROFILE_MODULE = 'labgeeks_people.UserProfile'
 
+# Schedman API - urls for APIs to compare shifts with for the late tool go here.
+SCHEDMAN_API = {}
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
