@@ -17,10 +17,7 @@ urlpatterns = patterns('',
                        (r'^chronos/', include('labgeeks_chronos.urls')),
                        (r'^people/', include('labgeeks_people.urls')),
                        (r'^schedule/', include('labgeeks_horae.urls')),
-                       (r'^delphi/', include('labgeeks_delphi.urls')),
-                       (r'^pythia/', include('labgeeks_pythia.urls')),
                        (r'^$', redirect_to, {'url': 'chronos/'}),
-                       (r'^oracles/', include('labgeeks_sybil.urls')),
                        (r'^badger/', include('badger.urls')),
                        # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
                        # to INSTALLED_APPS to enable admin documentation:
