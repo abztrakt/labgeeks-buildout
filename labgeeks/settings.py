@@ -155,6 +155,7 @@ INSTALLED_APPS = (
     'south',
     #'django.contrib.markup',
     #'debug_toolbar',
+    'forms_builder.forms',
 )
 
 HAYSTACK_SITECONF = 'labgeeks.search_sites'
