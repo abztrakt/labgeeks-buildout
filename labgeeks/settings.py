@@ -155,6 +155,7 @@ INSTALLED_APPS = (
     #'debug_toolbar',
 )
 
+APPEND_SLASH = True
 HAYSTACK_SITECONF = 'labgeeks.search_sites'
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
 HAYSTACK_WHOOSH_PATH = 'labgeeks/whoosh_index'
