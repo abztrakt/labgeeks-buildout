@@ -145,25 +145,16 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'haystack',
     'badger',
     'labgeeks_chronos',
     'labgeeks_hermes',
     'labgeeks_horae',
     'labgeeks_people',
-    #'labgeeks_sybil',
-    #'labgeeks_delphi',
-    #'labgeeks_pythia',
     'uw_gws',
     'south',
     #'django.contrib.markup',
     #'debug_toolbar',
 )
-
-HAYSTACK_SITECONF = 'labgeeks.search_sites'
-HAYSTACK_SEARCH_ENGINE = 'whoosh'
-HAYSTACK_WHOOSH_PATH = 'labgeeks/whoosh_index'
-HAYSTACK_INCLUDE_SPELLING = True
 
 LOGIN_URL = '/login/'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
