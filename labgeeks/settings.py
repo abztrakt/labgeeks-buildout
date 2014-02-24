@@ -145,6 +145,8 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'taggit',
+    'taggit_templatetags',
     'badger',
     'labgeeks_chronos',
     'labgeeks_hermes',
@@ -152,8 +154,6 @@ INSTALLED_APPS = (
     'labgeeks_people',
     'uw_gws',
     'south',
-    'taggit',
-    'taggit_templatetags',
     #'django.contrib.markup',
     #'debug_toolbar',
 )
