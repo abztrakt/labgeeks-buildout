@@ -152,6 +152,8 @@ INSTALLED_APPS = (
     'labgeeks_people',
     'uw_gws',
     'south',
+    'taggit',
+    'taggit_templatetags',
     #'django.contrib.markup',
     #'debug_toolbar',
 )
