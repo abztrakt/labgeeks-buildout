@@ -23,22 +23,19 @@
         </div>
     </div>
     {% if request.user.is_authenticated %}
-    <div class="nav">
-        <ul>
-            <li class="{% active_tab request "/" %}"> <a href="/">Home</a></li>
-            <li class="{% active_tab request "/chronos" %}"><a href="/chronos">Chronos</a></li>
+    <div class="nav row">
+        <ul class="span12">
+            <li class="head {% active_tab request "/chronos" %}"><a href="/chronos">Punchclock</a></li>
             {% if request.user.is_staff %}
-                <li class="{% active_tab request "/schedule" %}"><a href="/schedule">Schedule</a></li>
-            <li class="{% active_tab request "/chronos/report" %}"><a href="/chronos/report">Reports</a>{% endif %}
-            <li class="{% active_tab request "/people" %}"><a href="/people">People</a></li>
-            <li class="{% active_tab request "/oracles" %}"><a href="/oracles">Consult the Oracles</a></li>
+                <li class="head {% active_tab request "/schedule" %}"><a href="/schedule">Schedule</a></li>
+            <li class="head {% active_tab request "/chronos/report" %}"><a href="/chronos/report">Reports</a>{% endif %}
+            <li class="head {% active_tab request "/people" %}"><a href="/people">People</a></li>
+            <!--<li class="{% active_tab request "/oracles" %}"><a href="/oracles">Consult the Oracles</a></li>-->
             <!--<li><a class="bug_sug" href="http://trac.eplt.washington.edu/labgeeks4/newticket">Bugs + Feedback</a></li>-->
+            {% if perms.badger.view_badge %}
+                <li class="head {% active_tab request "/badger" %}"><a href="/badger">Badger</a></li>
+            {% endif %}
         </ul>
-        <form id='search' action='/oracles/search/' method='get' style='float:right'>
-            <input type='text' name='q' />
-            <input type='submit' value='search' />
-        </form>
-
     </div>
     {% endif %}
 </div>

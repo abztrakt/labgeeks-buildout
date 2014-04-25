@@ -26,6 +26,9 @@ DATABASES = {
 # User Profiles
 AUTH_PROFILE_MODULE = 'labgeeks_people.UserProfile'
 
+# Schedman API - urls for APIs to compare shifts with for the late tool go here.
+SCHEDMAN_API = {}
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -142,24 +145,18 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'haystack',
+    'taggit',
+    'taggit_templatetags',
+    'badger',
     'labgeeks_chronos',
     'labgeeks_hermes',
     'labgeeks_horae',
     'labgeeks_people',
-    'labgeeks_sybil',
-    'labgeeks_delphi',
-    'labgeeks_pythia',
+    'uw_gws',
     'south',
-    'django.contrib.markup',
+    #'django.contrib.markup',
     #'debug_toolbar',
 )
-
-APPEND_SLASH = True
-HAYSTACK_SITECONF = 'labgeeks.search_sites'
-HAYSTACK_SEARCH_ENGINE = 'whoosh'
-HAYSTACK_WHOOSH_PATH = 'labgeeks/whoosh_index'
-HAYSTACK_INCLUDE_SPELLING = True
 
 LOGIN_URL = '/login/'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True

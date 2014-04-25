@@ -6,6 +6,7 @@
 .mr.developer.cfg
 .project
 .pydevproject
+.Python
 .settings
 .tmp*
 bin
@@ -19,3 +20,4 @@ local
 local_settings.py
 src
 uploads
+template_overrides/*
