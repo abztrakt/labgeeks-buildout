@@ -135,3 +135,9 @@ def inactive(request):
     """ Return if a user's account has been disabled.
     """
     return render_to_response('inactive.html', locals())
+
+def pages(request):
+    """ Display this list of flatpages
+    """
+    params = {"request": request}
+    return render_to_response('pages.html', params)
