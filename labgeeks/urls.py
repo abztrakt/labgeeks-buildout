@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
-from django.views.generic.simple import redirect_to
 import os
 import settings
+import forms_builder.forms.urls
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -17,7 +17,10 @@ urlpatterns = patterns('',
                        (r'^chronos/', include('labgeeks_chronos.urls')),
                        (r'^people/', include('labgeeks_people.urls')),
                        (r'^schedule/', include('labgeeks_horae.urls')),
-                       (r'^$', redirect_to, {'url': 'chronos/'}),
+                       # (r'^delphi/', include('labgeeks_delphi.urls')),
+                       # (r'^pythia/', include('labgeeks_pythia.urls')),
+                       (r'^$', 'labgeeks.views.hello'),
+                       # (r'^oracles/', include('labgeeks_sybil.urls')),
                        (r'^badger/', include('badger.urls')),
                        # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
                        # to INSTALLED_APPS to enable admin documentation:
