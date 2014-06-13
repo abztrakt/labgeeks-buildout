@@ -22,6 +22,7 @@ urlpatterns = patterns('',
                        (r'^$', 'labgeeks.views.hello'),
                        # (r'^oracles/', include('labgeeks_sybil.urls')),
                        (r'^badger/', include('badger.urls')),
+                       (r'^pages/', include('django.contrib.flatpages.urls')),
                        # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
                        # to INSTALLED_APPS to enable admin documentation:
                        # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
