@@ -2,6 +2,7 @@ from django.conf.urls.defaults import *
 from django.views.generic.simple import redirect_to
 import os
 import settings
+import forms_builder.forms.urls
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -25,6 +26,7 @@ urlpatterns = patterns('',
 
                        # Uncomment the next line to enable the admin:
                        (r'^admin/', include(admin.site.urls)),
+                       (r'^forms/', include(forms_builder.forms.urls)),
                        )
 
 # only serve static files through the django server if debug is enabled. Only for development instances.

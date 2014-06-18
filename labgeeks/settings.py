@@ -103,6 +103,10 @@ TEMPLATE_LOADERS = (
     # 'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.request",
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -154,6 +158,7 @@ INSTALLED_APPS = (
     'south',
     #'django.contrib.markup',
     #'debug_toolbar',
+    'forms_builder.forms',
 )
 
 LOGIN_URL = '/login/'
