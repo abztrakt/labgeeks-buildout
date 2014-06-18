@@ -105,6 +105,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
+    "django.contrib.auth.context_processors.auth",
 )
 
 MIDDLEWARE_CLASSES = (
@@ -158,7 +159,6 @@ INSTALLED_APPS = (
     'south',
     #'django.contrib.markup',
     #'debug_toolbar',
-    'forms_builder.forms',
 )
 
 LOGIN_URL = '/login/'

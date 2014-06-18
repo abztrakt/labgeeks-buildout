@@ -26,7 +26,6 @@ urlpatterns = patterns('',
 
                        # Uncomment the next line to enable the admin:
                        (r'^admin/', include(admin.site.urls)),
-                       (r'^forms/', include(forms_builder.forms.urls)),
                        )
 
 # only serve static files through the django server if debug is enabled. Only for development instances.
