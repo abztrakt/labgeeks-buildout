@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import *
+import forms_builder.forms.urls
 import os
 import settings
 import forms_builder.forms.urls
@@ -19,10 +20,11 @@ urlpatterns = patterns('',
                        (r'^schedule/', include('labgeeks_horae.urls')),
                        # (r'^delphi/', include('labgeeks_delphi.urls')),
                        # (r'^pythia/', include('labgeeks_pythia.urls')),
-                       (r'^$', 'labgeeks.views.hello'),
                        # (r'^oracles/', include('labgeeks_sybil.urls')),
+                       (r'^tools/', include('labgeeks_apollo.urls')),
                        (r'^badger/', include('badger.urls')),
                        (r'^pages/', 'labgeeks.views.pages'),
+                       (r'^$', 'labgeeks.views.hello'),
                        # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
                        # to INSTALLED_APPS to enable admin documentation:
                        # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
