@@ -107,6 +107,13 @@ TEMPLATE_LOADERS = (
     # 'django.template.loaders.eggs.Loader',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # other context processors
+    "django.core.context_processors.request",
+    # Django 1.6 also needs:
+    'django.contrib.auth.context_processors.auth',
+)
+
 MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -156,7 +163,9 @@ INSTALLED_APPS = (
     'labgeeks_hermes',
     'labgeeks_horae',
     'labgeeks_people',
+    'labgeeks_apollo',
     'uw_gws',
+    'forms_builder.forms',
     'south',
     #'django.contrib.markup',
     #'debug_toolbar',

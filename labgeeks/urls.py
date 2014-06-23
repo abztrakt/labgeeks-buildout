@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 from django.views.generic.simple import redirect_to
+import forms_builder.forms.urls
 import os
 import settings
 
@@ -17,6 +18,7 @@ urlpatterns = patterns('',
                        (r'^chronos/', include('labgeeks_chronos.urls')),
                        (r'^people/', include('labgeeks_people.urls')),
                        (r'^schedule/', include('labgeeks_horae.urls')),
+                       (r'^tools/', include('labgeeks_apollo.urls')),
                        (r'^$', redirect_to, {'url': 'chronos/'}),
                        (r'^badger/', include('badger.urls')),
                        # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
@@ -25,6 +27,7 @@ urlpatterns = patterns('',
 
                        # Uncomment the next line to enable the admin:
                        (r'^admin/', include(admin.site.urls)),
+                       (r'^forms/', include(forms_builder.forms.urls)),
                        )
 
 # only serve static files through the django server if debug is enabled. Only for development instances.
