@@ -114,11 +114,7 @@ def labgeeks_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    try:
-                        return HttpResponseRedirect(request.GET['next'])
-                    except:
-                        #Redirects to the dashboard.
-                        return HttpResponseRedirect('/')
+                    return HttpResponseRedirect('/')
                 else:
                     # Return a disabled account error
                     return HttpResponseRedirect('/inactive/')
@@ -139,3 +135,9 @@ def inactive(request):
     """ Return if a user's account has been disabled.
     """
     return render_to_response('inactive.html', locals())
+
+def pages(request):
+    """ Display this list of flatpages
+    """
+    params = {"request": request}
+    return render_to_response('pages.html', params)

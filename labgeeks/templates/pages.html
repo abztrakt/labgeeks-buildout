@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load flatpages %}
+
+{% block content %}
+
+{% get_flatpages as flatpages %}
+<h2>Labgeeks Pages</h2>
+
+<ul>
+    {% for page in flatpages %}
+        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
