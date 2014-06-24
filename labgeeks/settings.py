@@ -118,6 +118,10 @@ MIDDLEWARE_CLASSES = (
     #'django.contrib.auth.middleware.RemoteUserMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'badger.middleware.RecentBadgeAwardsMiddleware',
+    'badger.middleware.CustomExceptionMiddleWare',
+    #optional badger middleware
+    #'badger.middleware.RecentBadgeAwardsList',
 )
 
 #AUTHENTICATION_BACKENDS = (
