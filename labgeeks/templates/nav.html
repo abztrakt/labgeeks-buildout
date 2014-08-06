@@ -34,8 +34,8 @@
             <!--<li><a class="bug_sug" href="http://trac.eplt.washington.edu/labgeeks4/newticket">Bugs + Feedback</a></li>-->
             {% if perms.badger.view_badge %}
                 <li class="head {% active_tab request "/badger" %}"><a href="/badger">Badger</a></li>
-                 <li class="head {% active_tab request "/tools" %}"><a href="/tools">Tools</a></li>
             {% endif %}
+            <li class="head {% active_tab request "/tools" %}"><a href="/tools">Tools</a></li>
         </ul>
 
     </div>
