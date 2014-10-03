@@ -155,8 +155,11 @@ INSTALLED_APPS = (
     'labgeeks_hermes',
     'labgeeks_horae',
     'labgeeks_people',
+    'labgeeks_apollo',
     'uw_gws',
     'south',
+    'taggit',
+    'forms_builder.forms',
     #'django.contrib.markup',
     #'debug_toolbar',
 )
