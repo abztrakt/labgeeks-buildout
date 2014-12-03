@@ -2,6 +2,7 @@
 *.swp
 *.swo
 *.db
+.coverage
 .installed.cfg
 .mr.developer.cfg
 .project
