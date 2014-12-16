@@ -24,7 +24,7 @@
     </div>
     {% if request.user.is_authenticated %}
     <div class="nav row">
-        <ul class="span12">
+        <ul class="col-md-6">
             <li class="head {% active_tab request "/" %}"> <a href="/">Home</a></li>
             <li class="head {% active_tab request "/chronos" %}"><a href="/chronos">Punchclock</a></li>
             {% if request.user.is_staff %}
