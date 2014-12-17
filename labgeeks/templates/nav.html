@@ -1,45 +1,66 @@
 {% load labgeeksrpg_extras %}
+<script type="text/javascript">
+$(document).ready(function() {
+    var url = window.location;
+    $('ul.nav a[href="' + this.location.pathname + '"]').parent().addClass('active');
 
-<div id="navbar">
-    <div id="header">
-        <h1>Labgeeks</h1>
-        <div class="dropdown">
-            {% if request.user.is_authenticated %}
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                {{ request.user }}@uw.edu <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
-                <li><a tabindex="-1" href="/people/{{ request.user }}">Profile</a></li>
-                {% if request.user.is_staff %}
-                <li><a tabindex="-1" href="/chronos/report">Report</a></li>
-                    <li><a tabindex="-1" href="/admin">Administrator</a></li>
-                {% endif %}
-                <li class="divider"></li>
-                <li><a tabindex="-1" href="/logout">Sign Out</a></li>
-            </ul>
-            {% else %}
-            <a href="/login">Sign In</a>
-            {% endif %}
-        </div>
-    </div>
-    {% if request.user.is_authenticated %}
-    <div class="nav row">
-        <ul class="col-md-6">
-            <li class="head {% active_tab request "/" %}"> <a href="/">Home</a></li>
-            <li class="head {% active_tab request "/chronos" %}"><a href="/chronos">Punchclock</a></li>
-            {% if request.user.is_staff %}
-                <li class="head {% active_tab request "/schedule" %}"><a href="/schedule">Schedule</a></li>
-            <li class="head {% active_tab request "/chronos/report" %}"><a href="/chronos/report">Reports</a>{% endif %}
-            <li class="head {% active_tab request "/people" %}"><a href="/people">People</a></li>
-            <!--<li class="{% active_tab request "/oracles" %}"><a href="/oracles">Consult the Oracles</a></li>-->
-            <!--<li><a class="bug_sug" href="http://trac.eplt.washington.edu/labgeeks4/newticket">Bugs + Feedback</a></li>-->
-            {% if perms.badger.view_badge %}
-                <li class="head {% active_tab request "/badger" %}"><a href="/badger">Badger</a></li>
-            {% endif %}
-            <li class="head {% active_tab request "/tools" %}"><a href="/tools">Tools</a></li>
-            <li class="head {% active_tab request "/docs" %}"><a href="/pages">Docs</a></li>
-        </ul>
+    $('ul.nav a').filter(function() {
+        return this.href == url;
+    }).parent().addClass('active').parent().parent().addClass('active');
+});
+</script>
 
-    </div>
-    {% endif %}
+
+<div id="lg_banner">
+    <h1><!--<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> -->Labgeeks</h1>
 </div>
+<header role="banner">
+    <nav role="navigation" class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            {% if request.user.is_authenticated %}
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/chronos/">Punchclock</a></li>
+                    {% if request.is_staff %}
+                        <li><a href="/schedule/">Schedule</a></li>
+                        <li><a href="/chronos/report/">Report</a></li>
+                    {% endif %}
+                    <li><a href="/people">People</a></li>
+                    {% if perms.badger.view_badge %}
+                        <li><a href="/badger/">Badger</a></li>
+                    {% endif %}
+                    <li><a href="/tools/">Tools</a></li>
+                    <li><a href="/pages/">Docs</a></li>
+                </ul>
+                {% endif %}
+                <ul class="nav navbar-nav navbar-right">
+                    {% if request.user.is_authenticated %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ request.user }}@uw.edu <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="/people/{{ request.user }}">Profile</a></li>
+                            {% if request.user.is_staff %}
+                                <li><a href="/chronos/report">Report</a></li>
+                                <li><a href="/admin">Administration</a></li>
+                            {% endif %}
+                            <li class="divider"></li>
+                            <li><a href="/logout">Sign Out</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                        <li><a href="/login">Sign In</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
