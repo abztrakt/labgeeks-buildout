@@ -1,12 +1,19 @@
 {% load labgeeksrpg_extras %}
 <script type="text/javascript">
 $(document).ready(function() {
-    var url = window.location;
-    $('ul.nav a[href="' + this.location.pathname + '"]').parent().addClass('active');
-
-    $('ul.nav a').filter(function() {
-        return this.href == url;
-    }).parent().addClass('active').parent().parent().addClass('active');
+    $('ul.nav').children('li').each(function() {
+        var root = $(this).children('a').attr('href');
+        var pathname = window.location.pathname;
+        if (pathname == '/' && root == '/') {
+            $(this).addClass('active');
+        } else if (pathname == '/chronos/' && root == '/chronos/') {
+            $(this).addClass('active');
+        } else if (pathname.indexOf('/chronos/report/') > -1 && root == '/chronos/report/') {
+            $(this).addClass('active');
+        } else if (pathname.indexOf(root) > -1 && root != '/' && root != '/chronos/') {
+            $(this).addClass('active');
+        }
+    });
 });
 </script>
 
@@ -30,11 +37,11 @@ $(document).ready(function() {
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="/chronos/">Punchclock</a></li>
-                    {% if request.is_staff %}
+                    {% if request.user.is_staff %}
                         <li><a href="/schedule/">Schedule</a></li>
                         <li><a href="/chronos/report/">Report</a></li>
                     {% endif %}
-                    <li><a href="/people">People</a></li>
+                    <li><a href="/people/">People</a></li>
                     {% if perms.badger.view_badge %}
                         <li><a href="/badger/">Badger</a></li>
                     {% endif %}
