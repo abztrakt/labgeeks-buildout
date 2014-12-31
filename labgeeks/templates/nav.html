@@ -12,6 +12,8 @@ $(document).ready(function() {
             $(this).addClass('active');
         } else if (pathname.indexOf(root) > -1 && root != '/' && root != '/chronos/') {
             $(this).addClass('active');
+        } else if (pathname.indexOf('/chronos/') > -1 && pathname.indexOf('/chronos/report/') < 0 && root == '/chronos/') {
+            $(this).addClass('active');
         }
     });
 });
