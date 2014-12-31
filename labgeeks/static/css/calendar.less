@@ -69,12 +69,9 @@
 }
 
 #calendar_nav {
-    text-align: center;
     display: block;
-    padding: 1em;
+    text-align: center;
     @media only screen and (min-width: @tablet_portrait) {
-        width: 50%;
-        margin: 0.5em auto;
         a {
             margin-left: 0.5em;
             margin-right: 0.5em;
@@ -82,15 +79,9 @@
     }
 }
 
-.calendar_nav_link {
-    padding: 1em;
-    width: 4em;
-}
-
 #calendar_key {
     padding: 15px;
     border: 1px solid @grayLight;
-    max-width: 40.3em;
 
     .key {
         height: 5em;
@@ -110,7 +101,7 @@
     }
 
     //not tiny
-    @media only screen and (min-width: @tablet_portrait) {
+    @media only screen and (min-width: @screen-md-min) {
         float: left;
         margin: 0 12px 0;
         .key {
@@ -118,7 +109,10 @@
             height: auto;
             float: none;
         }
-        width: 12em;
+    }
+
+    @media (min-width: @screen-md-min) {
+        max-width: 20em;
     }
 
     strong {
