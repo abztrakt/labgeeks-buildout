@@ -4,3 +4,4 @@ Markdown==2.2.0
 Whoosh==2.4.1
 diff-match-patch==20120106
 django-haystack==1.2.7
+django-compressor==1.4
