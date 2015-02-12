@@ -1,7 +1,7 @@
 {% load labgeeksrpg_extras %}
 <script type="text/javascript">
 $(document).ready(function() {
-    $('ul.nav').children('li').each(function() {
+    $('ul.nav1').children('li').each(function() {
         var root = $(this).children('a').attr('href');
         var pathname = window.location.pathname;
         if (pathname == '/' && root == '/') {
@@ -36,7 +36,7 @@ $(document).ready(function() {
                 </button>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav nav1">
                     <li><a href="/">Home</a></li>
                     <li><a href="/chronos/">Punchclock</a></li>
                     {% if request.user.is_staff %}
