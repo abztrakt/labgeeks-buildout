@@ -110,6 +110,7 @@ TEMPLATE_LOADERS = (
 TEMPLATE_CONTEXT_PROCESSORS = (
     # other context processors
     "django.core.context_processors.request",
+    "django.contrib.messages.context_processors.messages",
     # Django 1.6 also needs:
     'django.contrib.auth.context_processors.auth',
 )
