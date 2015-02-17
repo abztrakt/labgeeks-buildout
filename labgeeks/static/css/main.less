@@ -29,6 +29,16 @@
     text-decoration: none;
 }
 
+input[type="text"], textarea {
+    border: 1px solid #606163;
+}
+
+input[type="submit"] {
+    background-color: @blueLight;
+    color: @white;
+    padding: 5px;
+}
+
 html, body {
     height: 100%;
 }
@@ -128,15 +138,6 @@ form {
     padding-left: 1em;
 }
 
-.timeperiod_info {
-    border: black 5px solid;
-    float: left;
-    margin: 20px;
-    padding: 25px;
-    padding-top: 0px;
-    width: 300px;
-}
-
 .timeperiod_info h2 {
     font-size: 16pt;
     text-decoration: underline;
@@ -165,7 +166,8 @@ form {
 
 #navigation_panel {
     border: 2px solid black;
-    padding: 10px;
+    display: inline-block;
+    padding: 15px;
 }
 
 .affix {
@@ -180,4 +182,8 @@ form {
 
 #missing_ids {
     width: 500px;
+}
+
+.alert > ul {
+    padding-left: 30px;
 }
