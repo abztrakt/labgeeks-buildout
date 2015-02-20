@@ -1,8 +1,5 @@
 from django.conf.urls.defaults import *
-<<<<<<< HEAD
-=======
 from django.views.generic.simple import redirect_to
->>>>>>> Adds setup for apollo/formsbuilder
 import forms_builder.forms.urls
 import os
 import settings
@@ -28,8 +25,6 @@ urlpatterns = patterns('',
                        (r'^tools/', include('labgeeks_apollo.urls')),
                        (r'^$', redirect_to, {'url': 'chronos/'}),
                        (r'^badger/', include('badger.urls')),
-                       (r'^pages/', 'labgeeks.views.pages'),
-                       (r'^$', 'labgeeks.views.hello'),
                        # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
                        # to INSTALLED_APPS to enable admin documentation:
                        # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
