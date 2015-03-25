@@ -24,14 +24,15 @@
 
     {%if events or alerts %}
         {% if can_Add %}
-        <form method="post" action=""> {% csrf_token %}
+        <form method="post" action="" style="padding-top:0em"> {% csrf_token %}
         {% endif %}
 
+          <div id='notificationwrap' style="width:100%">
         {% if events %}
-            <div id="events">
+            <div id="events" style="overflow:hidden">
             <h3>Events</h3>
             {% for event in events %}
-                <div class="notification">
+                <div class="notification" style="float:left; margin-right: 10px;">
                     <h2>{% if can_Add %}<input type="checkbox" name="pk" value="{{event.pk}}">{% endif %}
                     {{event.due_date.month}}/{{event.due_date.day}} {{event.title}} </h2>
                     {% if event.user%}
@@ -47,10 +48,10 @@
         {% endif %}
 
         {% if alerts %}
-            <div id="alerts">
+            <div id="alerts" style="overflow:hidden">
                 <h3>Alerts</h3>
                 {% for alert in alerts %}
-                    <div class="notification">
+                    <div class="notification" style="float:left; margin-right: 10px;">
                         <h2>{% if can_Add %}<input type="checkbox" name="pk" value="{{alert.pk}}">{% endif %}{{alert.title}} </h2>
                         {% if alert.user%}
                             <p class="info"> {{alert.user}} posted on {{alert.date}} </p>
@@ -62,12 +63,15 @@
                 {% endfor %}
             </div>
         {% endif %}
+          </div>
     {% endif %}
 
     {% if events or alerts %}
         {% if can_Add %}
+          <div id='submitwrap'>
             <input type="submit" value="Archive" />
-            </form>
+          </div>
+        </form>    
         {% endif %}
     {% endif %}
 
