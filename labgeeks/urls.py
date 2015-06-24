@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from django.views.generic.simple import redirect_to
+from django.views.generic import RedirectView
 import forms_builder.forms.urls
 import os
 import settings
